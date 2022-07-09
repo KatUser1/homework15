@@ -1,0 +1,247 @@
+@import "_variables";
+
+*, html, body {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+  font-family: 'Montserrat', sans-serif;
+  box-sizing: border-box;
+}
+
+
+.wrapper{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 30px;
+  gap: 15px;
+  margin: 20px auto;
+  width: $widthcontent;
+  background: #F5F5FA;
+  border-radius: 12px;
+  position: relative;
+}
+
+.happy{
+  width: $widthcontent;
+  margin: 0 auto;
+  padding: 0 30px;
+  display: flex;
+  align-items: center;
+}
+
+h3{
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 37px;
+  background: $gradient;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 30px;
+}
+
+input{
+  margin-bottom: 15px;
+}
+
+input[type=text] {
+  @include form;
+  padding: 15px;
+  background: #FFFFFF;
+  border: 1px solid #FFFFFF;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 26px;
+  color: #B3B3BA;
+}
+
+input[id=message]{
+  height: 130px;
+  margin-bottom: 15px;
+}
+
+input[id=message] + label,input[id=name] + label,
+input[id=Phone-number] + label,input[id=E-mail] + label {
+  position: absolute;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 26px;
+  color: #B3B3BA;
+  transition: .3s ease-in;
+  left: 50px;
+}
+
+input[id=name] + label {
+  top: 130px;
+}
+
+input[id=message] + label{
+  top: 215px;
+}
+input[id=E-mail] + label {
+  top: 492px;
+}
+input[id=Phone-number] + label {
+  top: 406px;
+}
+input[id=name]:focus + label {
+  top: 94px;
+  color: $gradientfirstcolor;
+}
+input[id=message]:focus + label {
+  top: 182px;
+  color: $gradientfirstcolor;
+}
+input[id=E-mail]:focus + label {
+  top: 456px;
+  color: $gradientfirstcolor;
+}
+input[id=Phone-number]:focus + label {
+  top: 372px;
+  color: $gradientfirstcolor;
+}
+
+input[type=text]:focus{
+  outline: none;
+}
+
+p{
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #B3B3BA;
+  display: inline-block;
+  margin-right: 15px;
+}
+
+button{
+  @include form;
+  padding: 18px 30px;
+  background: $bluecolor;
+  box-shadow: 0 0 20px rgba(36, 163, 255, 0.5);
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  color: #FFFFFF;
+  outline: none;
+  border: 0;
+  cursor: grab;
+}
+
+.agreement{
+  position: relative;
+}
+
+.agreement label{
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #B3B3BA;
+  display: inline-block;
+  margin-right: 15px;
+}
+
+label span {
+  width: 30px;
+  height: 30px;
+  border-radius: 12px;
+  display: inline-block;
+  background: $gradientfirstcolor;
+  position: absolute;
+  top: -4px;
+  margin-left: 10px;
+}
+
+input[type=checkbox]{
+  display: none;
+}
+
+input[type=checkbox]:hover+span{
+  border: 3px solid $gradientsecondcolor;
+}
+
+input[type=checkbox]:checked+span {
+  background: $gradientsecondcolor;
+  background-image: url($image-base + "icons8-галочка (1).svg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+input[type=radio]{
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+input[type=radio]+label{
+  display: inline-flex;
+  align-items: center;
+  margin-right: 10px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 26px;
+  color: #B3B3BA;
+}
+
+input[type=radio]+label::before {
+  content: '';
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  border: 1px solid #adb5bd;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  margin-right: 5px;
+}
+
+input[type=radio]+label:hover::before {
+  border-color: $gradientsecondcolor;
+}
+input[type=radio]:checked+label::before {
+  border-color: $bluecolor;
+  background-color: $bluecolor;
+  background-image:url("../images/icons8-white-circle-18.png");
+}
+
+.ordered{
+  margin: 0 auto;
+  width: $widthcontent;
+}
+
+ol{
+  padding: 24px;
+  counter-reset: my-list;
+}
+ol li{
+   counter-increment: my-list;
+   position: relative;
+   padding: 10px 32px;
+  font-size: 18px;
+}
+
+ol li::before{
+  content: counter(my-list);
+  position: absolute;
+  display: block;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: $gradientsecondcolor;
+  color: #F5F5FA;
+  font-size: 24px;
+  top: 6px;
+  left: -4px;
+  text-align: center;
+}
+
+ol li:hover::before{
+  background-color: #F5F5FA;
+  color:$gradientsecondcolor;
+}
+

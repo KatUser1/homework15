@@ -1,0 +1,17 @@
+$widthcontent:510px;
+
+$bluecolor:#24A3FF;
+
+$gradientfirstcolor:#EF8080;
+$gradientsecondcolor:#F0145A;
+$gradient:linear-gradient(90.13deg, #F0145A 0.84%, #EF8080 99.96%);
+$image-base:"./images/";
+
+$height:56px;
+
+
+@mixin form ($height) {
+  width: 450px;
+  height: $height;
+  border-radius: 8px;
+}

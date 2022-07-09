@@ -1,0 +1,259 @@
+@charset "UTF-8";
+*, html, body {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+  font-family: "Montserrat", sans-serif;
+  box-sizing: border-box;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 30px;
+  gap: 15px;
+  margin: 20px auto;
+  width: 510px;
+  background: #F5F5FA;
+  border-radius: 12px;
+  position: relative;
+}
+
+.happy {
+  width: 510px;
+  margin: 0 auto;
+  padding: 0 30px;
+  display: flex;
+  align-items: center;
+}
+
+h3 {
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 37px;
+  background: linear-gradient(90.13deg, #F0145A 0.84%, #EF8080 99.96%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 30px;
+}
+
+input {
+  margin-bottom: 15px;
+}
+
+input[type=text] {
+  padding: 15px;
+  width: 450px;
+  height: 56px;
+  background: #FFFFFF;
+  border: 1px solid #FFFFFF;
+  border-radius: 8px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 26px;
+  color: #B3B3BA;
+}
+
+input[id=message] {
+  height: 130px;
+  margin-bottom: 15px;
+}
+
+input[id=message] + label, input[id=name] + label,
+input[id=Phone-number] + label, input[id=E-mail] + label {
+  position: absolute;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 26px;
+  color: #B3B3BA;
+  transition: 0.3s ease-in;
+  left: 50px;
+}
+
+input[id=name] + label {
+  top: 130px;
+}
+
+input[id=message] + label {
+  top: 215px;
+}
+
+input[id=E-mail] + label {
+  top: 492px;
+}
+
+input[id=Phone-number] + label {
+  top: 406px;
+}
+
+input[id=name]:focus + label {
+  top: 94px;
+  color: #EF8080;
+}
+
+input[id=message]:focus + label {
+  top: 182px;
+  color: #EF8080;
+}
+
+input[id=E-mail]:focus + label {
+  top: 456px;
+  color: #EF8080;
+}
+
+input[id=Phone-number]:focus + label {
+  top: 372px;
+  color: #EF8080;
+}
+
+input[type=text]:focus {
+  outline: none;
+}
+
+p {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #B3B3BA;
+  display: inline-block;
+  margin-right: 15px;
+}
+
+button {
+  padding: 18px 30px;
+  width: 450px;
+  height: 56px;
+  background: #24A3FF;
+  box-shadow: 0 0 20px rgba(36, 163, 255, 0.5);
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  color: #FFFFFF;
+  outline: none;
+  border: 0;
+  cursor: grab;
+}
+
+.agreement {
+  position: relative;
+}
+
+.agreement label {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #B3B3BA;
+  display: inline-block;
+  margin-right: 15px;
+}
+
+label span {
+  width: 30px;
+  height: 30px;
+  border-radius: 12px;
+  display: inline-block;
+  background: #EF8080;
+  position: absolute;
+  top: -4px;
+  margin-left: 10px;
+}
+
+input[type=checkbox] {
+  display: none;
+}
+
+input[type=checkbox]:hover + span {
+  border: 3px solid #F0145A;
+}
+
+input[type=checkbox]:checked + span {
+  background: #F0145A;
+  background-image: url("../images/icons8-галочка (1).svg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+input[type=radio] {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+
+input[type=radio] + label {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 10px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 26px;
+  color: #B3B3BA;
+}
+
+input[type=radio] + label::before {
+  content: "";
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  border: 1px solid #adb5bd;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  margin-right: 5px;
+}
+
+input[type=radio] + label:hover::before {
+  border-color: #F0145A;
+}
+
+input[type=radio]:checked + label::before {
+  border-color: #24A3FF;
+  background-color: #24A3FF;
+  background-image: url("../images/icons8-white-circle-18.png");
+}
+
+.ordered {
+  margin: 0 auto;
+  width: 510px;
+}
+
+ol {
+  padding: 24px;
+  counter-reset: my-list;
+}
+
+ol li {
+  counter-increment: my-list;
+  position: relative;
+  padding: 10px 32px;
+  font-size: 18px;
+}
+
+ol li::before {
+  content: counter(my-list);
+  position: absolute;
+  display: block;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #F0145A;
+  color: #F5F5FA;
+  font-size: 24px;
+  top: 6px;
+  left: -4px;
+  text-align: center;
+}
+
+ol li:hover::before {
+  background-color: #F5F5FA;
+  color: #F0145A;
+}
+
+/*# sourceMappingURL=styles.css.map */
